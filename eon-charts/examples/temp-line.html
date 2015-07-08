@@ -1,0 +1,49 @@
+<html>
+  <head>
+
+    <link rel="stylesheet" type="text/css" href="../bower_components/c3/c3.min.css">
+    <script src="../bower_components/pubnub/web/pubnub.min.js"></script>
+    <script src="../bower_components/d3/d3.min.js"></script>
+    <script src="../bower_components/c3/c3.min.js"></script>
+
+    <script src="../pubnub-c3.js"></script>
+
+    <style>
+      .c3-region-1 {
+        fill: #dd3333;
+        fill-opacity: 0.8
+      }
+    </style>
+    
+
+  </head>
+  <body>
+    <div id="chart"></div>
+    <h1 align="center">Temperature Readings</h1>
+    <script>
+      eon.chart({
+  history: true,
+  channel: 'tempeon',
+  flow: true,
+  generate: {
+    bindto: '#chart',
+    data: {
+      x: 'x',
+      labels: false
+    },
+    axis : {
+      x : {
+        type : 'timeseries',
+        tick: {
+          format: '%H:%M:%S'
+        }
+      }
+    }
+  }
+});
+    </script>
+    
+    
+    
+  </body>
+</html>

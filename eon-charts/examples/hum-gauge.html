@@ -1,0 +1,47 @@
+<html>
+  <head>
+
+    <link rel="stylesheet" type="text/css" href="../bower_components/c3/c3.min.css">
+    <script src="../bower_components/pubnub/web/pubnub.min.js"></script>
+    <script src="../bower_components/d3/d3.min.js"></script>
+    <script src="../bower_components/c3/c3.min.js"></script>
+
+    <script src="../pubnub-c3.js"></script>
+
+    <style>
+      .c3-region-1 {
+        fill: #dd3333;
+        fill-opacity: 0.8
+      }
+    </style>
+    
+
+  </head>
+  <body>
+    <div id="chart"></div>
+<h1 align="center">Humidity Readings</h1>
+    <script>
+      eon.chart({
+  channel: 'humeon',
+  generate: {
+    bindto: '#chart',
+    data: {
+      type: 'gauge',
+    },
+    gauge: {
+      min: 0,
+      max: 100
+    },
+    
+    color: {
+      pattern: ['#FF0000', '#F6C600', '#60B044'],
+      threshold: {
+        values: [30, 60, 90]
+      }
+    }
+  }
+});
+    </script>
+    
+  </body>
+</html>
