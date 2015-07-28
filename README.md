@@ -78,6 +78,12 @@ The Python code to work with Adafruit's DHT sensors is available on [Github](htt
 `pi@raspberrypi ~$ git clone https://github.com/adafruit/Adafruit_Python_DHT.git`
 `pi@raspberrypi ~$ cd Adafruit_Python_DHT`
 
+**Installing the library**
+
+`pi@raspberrypi ~$ sudo python setup.py install`
+
+This should compile the code for the library and install it on your device so any Python program can access the Adafruit_DHT python module.
+
 #### Code walk through
 
 First we import the libraries required for this project. We then initialize a PubNub object and use the publish subscribe keys which you got while signing up. 
